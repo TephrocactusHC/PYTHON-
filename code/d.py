@@ -5,7 +5,7 @@ import pandas as pd
 import torch.nn as nn
 from torch.utils.data import TensorDataset,DataLoader
 from sklearn import metrics
-import matplotlib.pyplot as plt
+#import matplotlib.pyplot as plt
 n_hidden = 100
 class BiLSTM(nn.Module):
     def __init__(self):
@@ -152,12 +152,12 @@ print("AUC:",metrics.auc(fpr, tpr))
 target_names=['真新闻', '假新闻']
 print(metrics.classification_report(y,changshi,target_names=target_names))
 
-plt.plot(fpr, tpr,color='darkorange',  label='ROC',lw=2)
-plt.xlim([0.0, 1.0])
-plt.ylim([0.0, 1.0])
-plt.xlabel('False Positive Rate')
-plt.ylabel('True Positive Rate')
-plt.title('ROC Curve')
-plt.legend(loc="lower right")
-plt.plot([0,1],[0,1],"k-")
-plt.show()
+#plt.plot(fpr, tpr,color='darkorange',  label='ROC',lw=2)
+#plt.xlim([0.0, 1.0])
+#plt.ylim([0.0, 1.0])
+#plt.xlabel('False Positive Rate')
+#plt.ylabel('True Positive Rate')
+#plt.title('ROC Curve')
+#plt.legend(loc="lower right")
+#plt.plot([0,1],[0,1],"k-")
+#plt.show()

@@ -71,6 +71,8 @@ class BiLSTM(nn.Module):
                             bidirectional=True,dropout=0.6)
         # fc
         self.fc = nn.Linear(n_hidden * 2, 2)
+        # Relu
+        self.relu=nn.ReLU(inplace=True)
 
     def forward(self, X):
         batch_size = X.shape[0]
@@ -82,6 +84,7 @@ class BiLSTM(nn.Module):
         outputs, (_, _) = self.lstm(input, (hidden_state, cell_state))
         outputs = outputs[-1]
         out = self.fc(outputs)
+        out=self.relu(out)
         return out
 
 model = BiLSTM()
